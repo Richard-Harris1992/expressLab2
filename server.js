@@ -25,4 +25,9 @@ app.get('/greeting/:name', (req, res) => {
     res.render('greeting', {heading: `How are you doing ${req.params.name}`});
 });
 
-app.listen(port, () => console.log(`port 3000 open`));
+app.get('/tip/:total/:percentage', (req, res) => {
+  res.send(`<h1> Your tip should be ${req.params.total * (req.params.percentage / 100)} </h1>`)
+});
+
+
+app.listen(port, () => console.log(`port 3000 connected.`));
